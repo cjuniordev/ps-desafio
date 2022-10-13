@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JogadorController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\NacionalidadeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocaleController;
@@ -43,6 +45,8 @@ Route::middleware('locale')->group(function () {
         Route::resource('categoria', CategoriaController::class, ['except' => ['show']]);
         Route::resource('produto', ProdutoController::class);
 
+        Route::resource('nacionalidade', NacionalidadeController::class);
+        Route::resource('jogador', JogadorController::class);
 
         //Rotas para perfil do usuário
         Route::controller(ProfileController::class)->name('profile.')->group(function () {
